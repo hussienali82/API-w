@@ -1,0 +1,7 @@
+SELECT *   FROM 
+    "TblTransmit"  t
+	right join public.hospitalmid hm on t."trSeg"=hm.transmit_id
+    inner join public."TblDir" d on t."trDir"=d."dirSeg"
+     inner join public."TblTest" test on test."testSeg"=hm.result 
+     inner join public."TblHospital" h on h."hosSeq"=hm.hospital 
+	 inner join public."TblInformation" i on i."InfSeg"= t."trConnct"
